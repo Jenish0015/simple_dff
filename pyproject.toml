@@ -1,0 +1,5 @@
+[dependency-groups]
+dev = [
+    "cocotb>=2.0.1",
+    "pytest>=9.0.2",
+]
