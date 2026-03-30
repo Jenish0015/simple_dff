@@ -28,18 +28,18 @@ async def dff_simple_test(dut):
 
         await RisingEdge(dut.clk)
 
-        assert dut.q.value == expected_val, f"Mismatch at cycle {i}"
+        assert dut.q.value == expected_val, f"output q was incorrect on the {i}th cycle"
         expected_val = val
 
     await RisingEdge(dut.clk)
-    assert dut.q.value == expected_val
+    assert dut.q.value == expected_val, "output q was incorrect on the last cycle"
 
 
 def test_simple_dff_hidden_runner():
     sim = os.getenv("SIM", "icarus")
 
     proj_path = Path(__file__).resolve().parent.parent
-    sources = [proj_path / "golden/dff.sv"]
+    sources = [proj_path / "sources/dff.sv"]
 
     runner = get_runner(sim)
 
