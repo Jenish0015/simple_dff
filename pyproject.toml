@@ -3,7 +3,7 @@ name = "simple-dff"
 version = "0.1.0"
 description = "Complete the implementation in sources/dff.sv."
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.13"
 dependencies = [
     "cocotb",
     "pytest",
